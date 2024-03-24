@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+<style>
+    .hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;  /* Set minimum height for viewport */
+  background-color: #f0f0f0;  /* Adjust background color as needed */
+}
+.hero-content {
+  text-align: center;
+  color: #333;  /* Adjust text color as needed */
+  padding: 2rem;
+}
+
+.hero-content h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.hero-btn {
+  background-color: #007bff;  /* Adjust button color as needed */
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.hero-img {
+  width: 100%;  /* Adjust image width as needed */
+  object-fit: cover;  /* Ensure image fills container */
+  opacity: 0.3;  /* Add a slight transparency (optional) */
+  position: absolute;  /* Layer the image behind the content */
+  top: 0;
+  left: 0;
+}
+
+
+
+</style>
+    
+</head>
+<body>
+    <section class="hero animate__animated animate__fadeIn">
+        <div class="hero-content">
+          <h1>Your Catchy Headline</h1>
+          <p>A brief description of your website or service.</p>
+          <button class="hero-btn">Get Started</button>
+        </div>
+        <img src="../static/images/" alt="Hero Image" class="hero-img">
+      </section>
+      
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Pet Adoption Management System</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+	<!-- <script src="https://kit.fontawesome.com/9083e0a34f.js" crossorigin="anonymous"></script> -->
+	<!-- Font Awesome -->
+<link
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+rel="stylesheet"
+/>
+<!-- Google Fonts -->
+<link
+href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+rel="stylesheet"
+/>
+<!-- MDB -->
+<link
+href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.2.0/mdb.min.css"
+rel="stylesheet"
+/>
+</head>
+<body>
+
+{% include 'navbar.html' %}
+<div class="thecontainer">
+	{% include 'messages.html' %}
+            {% block main %}
+			
+
+
+            {% endblock %}
+</div>
+<script>
+	var message_tag = document.getElementById("message_box");
+	setTimeout(function(){
+	   message_tag.style.display = "none";
+	}, 6000);
+</script>
+
+<script  src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

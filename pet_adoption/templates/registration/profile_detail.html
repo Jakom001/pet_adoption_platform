@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+{% block title %}Profile page{% endblock %}
+
+{% block main %}
+
+<div class="row my-4">
+    <div class="col-md-4"></div>
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header bg-info text-white">
+                Profile Detail Page
+            </div>
+            <div class="row p-3">
+                <div class="col-md-8">
+                    <table class="table table-borderless">
+                        <thead>
+                            <span class="h4">Profile Information</span class="h4">
+                           <hr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>Username</th>
+                                <td>{{ the_profile.username }}</td>
+                            </tr>
+                            <tr>
+                                <th>First Name</th>
+                                <td>{{ the_profile.first_name }}</td>
+                            </tr>
+                            <tr>
+                                <th>Last Name</th>
+                                <td>{{ the_profile.last_name }}</td>
+                            </tr>
+                            <tr>
+                                <th>Email</th>
+                                <td>{{ the_profile.email }}</td>
+                            </tr>
+                            <tr>
+                                <th>Phone</th>
+                                <td>{{the_profile.profile.phone_number}}</td>
+                            </tr>
+                            <tr>
+                                <th>Address</th>
+                                <td>{{the_profile.profile.address}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                 <div class="col-md-4">
+                    <img class="img-thumbnail" src="{{ the_profile.profile.image.url }}" alt="profile-image">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

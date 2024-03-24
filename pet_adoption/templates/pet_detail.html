@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main %}
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Adopt {{pet.name}}</h1>
+        <a href="/">Home</a> <span class="hero-ado">/ </span> Adopt / <span class="hero-ado"></span>Adopt {{pet.name}}</span>
+    </div>
+        <img  src="{% static 'images/adopthero.webp' %}" alt="dog image" class="hero-img">
+</section>
+
+
+
+<div class="adopt-detail">
+    <div class="adopt-detail-two">
+        <img src="{{ pet.image.url }}" alt="{{pet.name}}">
+    </div>
+
+    <div class="adopt-detail-two">
+        <div class="description">
+            <h1>Adopt {{pet.name}}</h1>
+            <h2>Age: {{pet.age}} {{month_year}} old</h2>
+            <h2>Ksh {{pet.price}}</h2>
+            <p>Description: {{pet.description}}</p>
+
+            <button class="adopt-button">
+            <a href="{% url 'cart' pet.id %}">More Info</a>
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="adopt-image-gallary"> 
+    <img src="{% static 'images/adoptsingle2.jpg' %}" alt="image of a cat">
+    <img src="{% static 'images/adoptsingle3.jpg' %}" alt="image of a cat">
+    <img src="{% static 'images/adoptsingle4.jpg' %}" alt="image of a cat">
+    <img src="{% static 'images/adoptsingle5.jpg' %}" alt="image of a cat">
+</div>
+
+<div class="more-detail">
+    <div class="adopt-detail-two">
+        <div class="more-about-me">
+            
+            <h1>More about me</h1>
+            <ul>
+                <li>Friendly to other animals</li>
+                <li>Neutered</li>
+                <li>Friendly to kids</li>
+                <li>Vaccinated</li>
+
+                <p>aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum lorem ipsum dolor.</p> 
+
+                <p>Sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum lorem ipsum dolor.</p>
+            </ul>
+        </div>
+    </div>
+
+    <div class="adopt-detail-two">
+        <div class="adoption-process">
+            <h1>adoption process</h1>
+            <p>uis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum lorem ipsum dolor.</p>
+
+            <h1>Requirements</h1>
+            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum lorem ipsum dolor.</p>
+            <button class="adopt-button">Adopt me</button>
+        </div>
+    </div>
+</div>
+    
+{% endblock %}

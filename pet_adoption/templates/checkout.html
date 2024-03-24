@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main %}
+<section class="hero">
+    <div class="hero-content">
+        <h1>Checkout</h1>
+        <a href="/">Home</a> <span class="hero-ado">/ checkout cart</span>
+    </div>
+        <img  src="{% static 'images/adopthero.webp' %}" alt="dog image" class="hero-img">
+</section>
+<div class="container checkout">
+    <h2>Billing Details</h2>
+    <form action="#" method="post">
+        <label for="fname">First Name</label>
+        <input type="text" name="firstname" value="" required>
+        <label for="">Last Name</label>
+        <input type="text" name="lastname" value="" required>
+        <label for="email">Email</label>
+        <input type="email" name="email" value="" required>
+        <label for="phonenumber">Phone Number</label>
+        <input type="number" name="phonenumber" value="" required>
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" required>
+        <input type="submit" value="Submit">
+    </form>
+</div>
+<div class="order-summary">
+    <div class="cart">
+        <table>
+            <tr>
+                <th>Product Item</th>
+                <th>Quantity</th>
+                <th>Price</th>
+            </tr>
+            <tr>
+            <td>
+                <img src="{{pet.image.url}}" alt="{{pet_name}}">
+                <span>{{pet.name}}</span>
+                <span>{{pet.age}} years old</span>
+            </td>
+            <td>1 </td>
+            <td>Ksh {{pet.price}}</td>
+            </tr>
+        </table>
+        <div class="total-amount">
+            <div class="total">
+                <h1>Total Amount</h1>
+                <h2>Total amount Ksh 800</h2>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<div class="shipping-method">
+    <input type="radio" value="flat">
+    <label for="radio">Flat Rate Ksh 30</label>
+    <input type="radio" value="free-shipping">
+    <label for="">Free Shipping</label>
+</div>
+{% endblock %}

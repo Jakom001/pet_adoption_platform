@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load static i18n %}
+
+{% load crispy_forms_tags %}
+{% block main %}
+
+  <section class="vh-100">
+  <div class="container py-5 h-100">
+    <div class="row d-flex align-items-center justify-content-center h-100">
+      <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+        <form action="" method=POST>
+          {% csrf_token %}
+          <div class="d-flex align-items-center mb-3 pb-1">
+
+                    <!-- <span class="h1 fw-bold mb-0">Pet Adoption Management System</span> -->
+                  </div>
+
+                  <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account</h5>
+
+           {{  login_form|crispy }}
+           <!-- 2 column grid layout for inline styling -->
+  <div class="row mb-4">
+    <div class="col d-flex justify-content-center">
+      <!-- Checkbox -->
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
+        <label class="form-check-label" for="form2Example31"> Remember me </label>
+      </div>
+    </div>
+
+    <div class="col">
+      <!-- Simple link -->
+      <a href="{% url 'password_reset' %}">Forgot password?</a>
+    </div>
+  </div>
+
+
+          <!-- Submit button -->
+          <button type="submit" class="btn btn-primary btn-lg btn-block">Sign in</button>
+                </br></br>
+            <div class="text-center">
+        <p>Not a member? <a href="{% url 'register' %}">Register</a></p>
+      </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
