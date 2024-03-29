@@ -3,11 +3,11 @@ from .models import Adopt
 
 
 class AdoptAdmin(admin.ModelAdmin):
-    fields = ('name', 'date_added', 'age','month_year', 'description', 'image', 'price', 'category')
-    list_display = ('id', 'name', 'age', 'month_year', 'date_added', 'price', 'category')
+    fields = ('name', 'date_added', 'age','month_year', 'description', 'image', 'price', 'species')
+    list_display = ('id', 'name', 'age', 'month_year', 'date_added', 'price', 'species')
     ordering =('-id',)
     readonly_fields = ('date_added',)
-    search_fields = ('name', 'date_added', 'age', 'category')
+    search_fields = ('name', 'date_added', 'age', 'species')
     list_per_page= 15
 
 admin.site.register(Adopt, AdoptAdmin)

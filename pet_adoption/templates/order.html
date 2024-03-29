@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main %}
+<section class="hero">
+    <div class="hero-content">
+        <h1>Orders</h1>
+        <a href="/">Home</a> <span class="hero-ado">/ Orders</span>
+    </div>
+        <img  src="{% static 'images/jumbotron.jpg' %}" alt="dog image" class="hero-img">
+</section>
+<div class="orders">
+    <h1>Orders</h1>
+    <table>
+        <tr>
+            <th>Order No</th>
+            <th>Order date</th>
+            <th>name</th>
+            <th>age</th>
+            <th>price</th>
+
+        </tr>
+        <tr>
+            <td>001</td>
+            <td>12/12/2024</td>
+            <td>Pipo</td>
+            <td>3 years</td>
+            <td>ksh 3000</td>
+        </tr>
+        <tr>
+            <td>001</td>
+            <td>12/12/2024</td>
+            <td>Pipo</td>
+            <td>3 years</td>
+            <td>ksh 3000</td>
+        </tr>
+        <tr>
+            <td>001</td>
+            <td>12/12/2024</td>
+            <td>Pipo</td>
+            <td>3 years</td>
+            <td>ksh 3000</td>
+        </tr>
+    </table>
+</div>
+{% endblock %}

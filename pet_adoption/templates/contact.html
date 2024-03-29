@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main %}
+<section class="hero">
+    <div class="hero-content">
+        <h1>Contact us</h1>
+        <a href="/">Home</a> <span class="hero-ado">/ Contact us</span>
+    </div>
+    <img  src="{% static 'images/jumbotron.jpg' %}" alt="dog image" class="hero-img">
+</section>
+
+<div class="Contact">
+    <div class="lets-chat">
+
+   
+        <h2>Contact Us</h2>
+        <h1>Let's Talk Question.</h1>
+        <p>The domestic dog is a doiated dendant of the wolf. The dog derived from an ancient, extinct wolf, and the modern grey.</p>
+
+        <form action="">
+            <label for="">Your Name *</label>
+            <input type="text" placeholder="John Doe" required>
+
+            <label for="">Your Email *</label>
+            <input type="email" placeholder="info.example@gmail.com" required>
+
+            <label for="">Your Phone number *</label>
+            <input type="number" placeholder="0728169645" required>
+
+            <label for="">Your message *</label>
+            <textarea name="message" id="message" cols="30" rows="10" placeholder="Opinion..."></textarea>
+
+            <input type="submit" value="Send Now">
+
+        </form>
+    </div>
+    <div class="contact-right">
+        <img src="{%static 'images/contact_img.png' %}" alt="contact_img">
+        <p><i class="fa-solid fa-location-dot"></i> 567-0100, Ongata Rongai, Kajiado County Kenya</p>
+
+        <p><i class="fa-solid fa-phone"></i>+254(728) 169 645</p>
+        <p><i class="fa-solid fa-envelope"></i>petremosh85@gmail.com</p>
+
+        <i class="fa-brands fa-facebook"></i> <i class="fa-brands fa-x-twitter"></i> <i class="fa-brands fa-linkedin"></i>
+    </div>
+
+
+</div>
+
+{% endblock %}

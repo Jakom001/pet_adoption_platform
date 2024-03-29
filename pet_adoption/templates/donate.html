@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main %}
+<section class="hero">
+    <div class="hero-content">
+        <h1>Donate</h1>
+        <a href="/">Home</a> <span class="hero-ado">/ Donate</span>
+    </div>
+    <img  src="{% static 'images/jumbotron.jpg' %}" alt="dog image" class="hero-img">
+</section>
+
+<h2>Donate a Pet</h2>
+<form method="post" enctype="multipart/form-data" action="{% url 'donate_pet' %}">
+  {% csrf_token %}
+  <label for="name">Pet's Name:</label>
+  <input type="text" name="name" id="name" required>
+
+  <label for="species">Species:</label>
+  <select name="species" id="species" required>
+    <option value="">--- Select Species ---</option>
+    <option value="dog">Dog</option>
+    <option value="cat">Cat</option>
+    </select>
+
+  <label for="breed">Breed (optional):</label>
+  <input type="text" name="breed" id="breed">
+
+  <label for="age">Age:</label>
+  <input type="number" name="age" id="age" required>
+
+  <label for="description">Description:</label>
+  <textarea name="description" id="description" rows="5" required></textarea>
+
+  <label for="image">Pet Image (optional):</label>
+  <input type="file" name="image" id="image" accept="image/*">
+
+  <button type="submit">Submit Pet Donation</button>
+</form>
+
+
+
+
+{% endblock %}

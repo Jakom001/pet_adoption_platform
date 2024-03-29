@@ -9,12 +9,18 @@
 <img src="{%static 'images/logo.avif' %}" alt="logo image">
 
 <div class="nav-items">
-    <a href="#">Home</a>
-    <a href="#">About us</a>
-    <a href="#">Adoption</a>
-    <a href="#">Contact us</a>
-    <a href="#">Login / Register</a>
-    <a href="#">Hi John <i class="fa-regular fa-user"></i></a>
-    <a href="#">cart</a>
+    <a href="/">Home</a>
+    <a href="{% url 'about' %}">About us</a>
+    <a href="{% url 'adopt' %}">Adoption</a>
+    <a href="{% url 'contact' %}">Contact us</a>
+    <a href="{% url 'donate' %}">Donate</a>
+    
+    <a href="#">cart <i class="fa-solid fa-cart-plus"></i> <span class="cart-num">0</span></a>
+    {% if user.is_authenticated %}
+        <a href="#">Hi {{user.username}} <i class="fa-regular fa-user"></i></a>
+    {% else%}
+        <a href="#">Login / Register</a>
+    {% endif %}
+   
 </div>
 </div> 
