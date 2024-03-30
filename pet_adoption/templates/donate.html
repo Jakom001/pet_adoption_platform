@@ -9,35 +9,38 @@
     <img  src="{% static 'images/jumbotron.jpg' %}" alt="dog image" class="hero-img">
 </section>
 
-<h2>Donate a Pet</h2>
-<form method="post" enctype="multipart/form-data" action="{% url 'donate_pet' %}">
-  {% csrf_token %}
-  <label for="name">Pet's Name:</label>
-  <input type="text" name="name" id="name" required>
+<div class="donate">
+  <div class="donate-desc">
+    <h2>Donate To our animal shelter </h2>
 
-  <label for="species">Species:</label>
-  <select name="species" id="species" required>
-    <option value="">--- Select Species ---</option>
-    <option value="dog">Dog</option>
-    <option value="cat">Cat</option>
-    </select>
+    <p>We believe that every animal deserves a safe and happy life. With that goal in mind, we have created animal shelters across the country to vaccinate, rescue, and foster stray cats and dogs</p>
+    
+    <button class="adopt-button">Contact to Donate a Pet <i class="fa-solid fa-arrow-right"></i></button>
+  </div>
+  <img src="{% static 'images/donate1.png' %}" alt="dog image">
+  
+</div>
 
-  <label for="breed">Breed (optional):</label>
-  <input type="text" name="breed" id="breed">
+<h2>transforming lives with your donation: help rescue dogs and cats today!</h2>
 
-  <label for="age">Age:</label>
-  <input type="number" name="age" id="age" required>
+<div class="donate-money">
+  <div class="money-card">
+    <h1>Ksh 500</h1>
+    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor.</p>
+    <button class="adopt-button"> <i class="fa-solid fa-dollar-sign"></i> Donate Now</button>
+  </div>
 
-  <label for="description">Description:</label>
-  <textarea name="description" id="description" rows="5" required></textarea>
+  <div class="money-card">
+    <h1>Ksh 500</h1>
+    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor.</p>
+    <button class="adopt-button"> <i class="fa-solid fa-dollar-sign"></i> Donate Now</button>
+  </div>
 
-  <label for="image">Pet Image (optional):</label>
-  <input type="file" name="image" id="image" accept="image/*">
+  <div class="money-card">
+    <h1>Ksh 500</h1>
+    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor.</p>
+    <button class="adopt-button"> <i class="fa-solid fa-dollar-sign"></i> Donate Now</button>
+  </div>
 
-  <button type="submit">Submit Pet Donation</button>
-</form>
-
-
-
-
+</div>
 {% endblock %}

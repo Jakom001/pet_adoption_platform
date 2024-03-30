@@ -25,8 +25,8 @@
         <img src="{{pet.image.url}}" alt="image of a pet">
         <h1>{{pet.name}}</h1>
         <h2>{{pet.age}} {{pet.month_year}} old</h2>
-        <h2>Ksh {{pet.price}}</h2>
-        <p>{{pet.description}}</p>
+        <h3>Ksh {{pet.price}}</h3>
+        <p class="desc">{{pet.description}}</p>
 
         <button class="adopt-button">
         <a href="{% url 'pet_detail' pet.id %}">More Info</a>

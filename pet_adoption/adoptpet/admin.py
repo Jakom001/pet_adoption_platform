@@ -3,8 +3,8 @@ from .models import Adopt
 
 
 class AdoptAdmin(admin.ModelAdmin):
-    fields = ('name', 'date_added', 'age','month_year', 'description', 'image', 'price', 'species')
-    list_display = ('id', 'name', 'age', 'month_year', 'date_added', 'price', 'species')
+    fields = ('name', 'date_added', 'age','month_year', 'description','breed', 'gender', 'image', 'price', 'species')
+    list_display = ('id', 'name', 'age', 'month_year', 'date_added','breed', 'gender', 'price', 'species')
     ordering =('-id',)
     readonly_fields = ('date_added',)
     search_fields = ('name', 'date_added', 'age', 'species')

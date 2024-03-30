@@ -10,84 +10,116 @@
     <button class="adopt-button">Adopt now</button>
 </div>
 
-
-<div class="about">
-    <div class="about-text about-two">
-        <h1>About us</h1>
-        <h2>Our Shelter</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-
-        <p>Duis aute irure dolor in reprehenderit in Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat:</p>
-
-        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
+<div class="container section">
+    <div class="about-text section-two">
+        <h6 class="header6">ABOUT US</h6>
+        <h1 class="header1">Our Shelter</h1>
+        <p>At Pet Love, our mission is simple yet profound: to connect homeless pets with loving families and provide comprehensive support throughout the adoption process. </p> 
+        <p>We believe that every pet deserves a chance at a happy, fulfilling life, and we're committed to making that a reality for animals in need.</p>
+        <p>Pet Love is a cutting-edge platform designed to streamline the pet adoption process for shelters, adopters, and volunteers alike</p>
+        
     </div>
-    <div class="about-image about-two">
+    <div class="about-image section-two">
         <img src="{% static 'images/shelter.jpg' %}" alt="dog image">
 
     </div>
 </div>
-<div class="home-section">
 
-    <div class="donate">
-        <img src="{% static 'images/donate.png' %}" alt="dog image">
-    </div>
+<div class="donate-container">
 
-    <div class="make-donation">
-        <h2>Make a Donation</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <div class="container section">
+        <div class="section-two">
+            <img src="{% static 'images/donate.png' %}" alt="dog image">
+        </div>
 
-        <button class="adopt-button">Donate</button>
-    </div>
+        <div class="section-two">
+            <h1 class="header1">Make a </br> Donation</h1>
+            <p>Your generous donations are the lifeblood of our organization, fueling our efforts to connect homeless pets with loving families.</p> 
+            <p> With each contribution, you become a vital part of our mission, providing essential resources that enable us to provide shelter, medical care, and support to animals in need. </p>
+            <p>Together, we can give these deserving animals a second chance at life and create a brighter future for them.</p>
 
-</div>
-        <h2>Find your frind</h2>
-        <h1>Adopt a pet</h1>
-<div class="pet-card-categories">
-    {% for pet in pets %}
-    <div class="pet-card">
-        <img src="{{pet.image.url}}" alt="image of a pet">
-        <h1>{{pet.name}}</h1>
-        <h2>{{pet.age}} {{pet.month_year}} old</h2>
-        <h2>Ksh {{pet.price}}</h2>
-        <p>{{pet.description}}</p>
-
-        <button class="adopt-button">
-        <a href="{% url 'pet_detail' pet.id %}">More Info</a>
-        </button>
-    </div>
-    {% endfor %}
-</div>
-            <button class="adopt-pet">See all pets Available for adoption</button>
-
-
-<div class="counter">
-    <div class="counter-cards">
-        <h1>800+</h1>
-        <h2>Pets Adopted</h2>
-    </div>
-    <div class="counter-cards">
-        <h1>40+</h1>
-        <h2>volunteers</h2>
-    </div>
-    <div class="counter-cards">
-        <h1>1500+</h1>
-        <h2>Happy Clients</h2>
-    </div>
-</div>
-
-<h2>GET IN TOUCH</h2>
-<h1>Meet our Team</h1>
-
-
-<div class="team">
-    <div class="team-card">
-        <img src="" alt="">
-            <h1>Jonathan Doe</h1>
-            <h2>Veterinarian</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <button class="adopt-button">Donate</button>
+        </div>
 
     </div>
 </div>
+<div class="pet-container">
+
+
+    <div class="petty container">
+                <h6 class="header6">FIND YOUR FRIEND</h6>
+                <h1 class="header1">Adopt a pet</h1>
+        <div class="pet-card-categories">
+            {% for pet in pets %}
+            <div class="pet-card">
+                <img src="{{pet.image.url}}" alt="image of a pet">
+                <h1>{{pet.name}}</h1>
+                <h2>{{pet.age}} {{pet.month_year}} old</h2>
+                <h3>Ksh {{pet.price}}</h3>
+                <p>{{pet.description}}</p>
+
+                <button class="adopt-button">
+                <a href="{% url 'pet_detail' pet.id %}">More Info</a>
+                </button>
+            </div>
+            {% endfor %}
+        </div>
+            <button class="adopt-button"> <a href="{% url 'adopt'%}">See all pets Available for adoption</a></button>
+    </div>
+</div>
+<div class="counter-container">
+    <div class="counter">
+        <div class="counter-cards">
+            <h1>800+</h1>
+            <h2>Pets Adopted</h2>
+        </div>
+        <div class="counter-cards">
+            <h1>40+</h1>
+            <h2>volunteers</h2>
+        </div>
+        <div class="counter-cards">
+            <h1>1500+</h1>
+            <h2>Happy Clients</h2>
+        </div>
+    </div>
+</div>
+
+
+<div class="pet-container">
+
+
+    <div class="petty container">
+                <h6 class="header6">GET IN TOUCH</h6>
+                <h1 class="header1">Meet our Team</h1>
+
+
+                <div class="team">
+                    <div class="team-card">
+                        <img src="{% static 'images/team1.jpg' %}" alt="dog image">
+                            <h1>Jonathan Doe</h1>
+                            <h2>Veterinarian</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                
+                    </div>
+                    <div class="team-card">
+                        <img src="{% static 'images/team1.jpg' %}" alt="dog image">
+                            <h1>Jonathan Doe</h1>
+                            <h2>Veterinarian</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                
+                    </div>
+                    <div class="team-card">
+                        <img src="{% static 'images/team1.jpg' %}" alt="dog image">
+                            <h1>Jonathan Doe</h1>
+                            <h2>Veterinarian</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                
+                    </div>
+                </div>
+    </div>
+</div>                
+
+
 
 
 

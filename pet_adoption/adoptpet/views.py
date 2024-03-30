@@ -50,23 +50,7 @@ def contact(request):
     return render(request, 'contact.html', context)
 
 def donate(request):
-    if request.method == 'POST':
-        name = request.POST.get('name')
-        species = request.POST.get('species')
-        breed = request.POST.get('breed')
-        age = request.POST.get('age')
-        description = request.POST.get('description')
-        image = request.FILES.get('image')
-
-        # validate and sve pet information
-        pet = Pet.objects.create(
-            name = name,
-            species=species,
-            breed = breed,
-            age=age,
-            description=description,
-            image=image,
-        )
+    
         return render(request, 'donate.html')
     
 

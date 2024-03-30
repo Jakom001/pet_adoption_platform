@@ -1,12 +1,16 @@
 {% load static %}
 <div class="top-navbar">
-    <p>Online order: <a href="tel:+254728169645">(+254)-728-169-645</a></p>			
-    <p>Email now:<a href="mailto:sales@doggy.com"> sales@doggy.com</a></p>
+    <p><i class="fa-solid fa-location-dot"></i> 567-0100, Ongata Rongai, Kajiado County Kenya</p>
+    <p><i class="fa-solid fa-phone"></i> +254(728) 169 645</p>
+    <p><i class="fa-solid fa-envelope"></i> petremosh85@gmail.com</p>
 </div>
 
-
 <div class="navbar">
-<img src="{%static 'images/logo.avif' %}" alt="logo image">
+    <div class="logo">
+        <img src="{%static 'images/logo.png' %}" alt="logo image">
+        <span>Pet Love</span>
+    </div>
+
 
 <div class="nav-items">
     <a href="/">Home</a>
@@ -15,7 +19,7 @@
     <a href="{% url 'contact' %}">Contact us</a>
     <a href="{% url 'donate' %}">Donate</a>
     
-    <a href="#">cart <i class="fa-solid fa-cart-plus"></i> <span class="cart-num">0</span></a>
+    <a href="{% url 'cart' %}">cart <i class="fa-solid fa-cart-plus"></i> <span class="cart-num">0</span></a>
     {% if user.is_authenticated %}
         <a href="#">Hi {{user.username}} <i class="fa-regular fa-user"></i></a>
     {% else%}
