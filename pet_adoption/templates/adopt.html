@@ -9,9 +9,9 @@
     <img  src="{% static 'images/jumbotron.jpg' %}" alt="dog image" class="hero-img">
 </section>
 <section class="adopt">
-    <h1>Adopt</h1>
-    <h2>Find a new friend</h2>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias velit atque, exercitationem dolores in tempora perspiciatis laudantium distinctio inventore maiores quibusdam minima. Quaerat, reiciendis rem alias quia illum porro doloribus.</p>
+    <h1 class="header1">Adopt</h1>
+    <h6 class="header6">Find a new friend</h6>
+    <p>Find your new furry family member here, ready to bring joy into your life. <br> Each pet has a story and is waiting for a loving home. <br> Start your journey of unconditional love today by browsing our adorable pets!</p>
     <div class="pet-categories">
         <button class="category-btn active"> All Pets</button> 
         <button class="category-btn">Dogs</button> 
@@ -25,7 +25,7 @@
         <img src="{{pet.image.url}}" alt="image of a pet">
         <h1>{{pet.name}}</h1>
         <h2>{{pet.age}} {{pet.month_year}} old</h2>
-        <h3>Ksh {{pet.price}}</h3>
+        <h3> Ksh {{pet.price}}</h3>
         <p class="desc">{{pet.description}}</p>
 
         <button class="adopt-button">
