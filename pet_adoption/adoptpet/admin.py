@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Adopt
+from .models import Adopt, AdoptionApplication
 
 
 class AdoptAdmin(admin.ModelAdmin):
@@ -12,6 +12,14 @@ class AdoptAdmin(admin.ModelAdmin):
 
 admin.site.register(Adopt, AdoptAdmin)
 
+
+class AdoptionApplicationAdmin(admin.ModelAdmin):
+    fields = ('first_name', 'last_name', 'email', 'phonenumber', 'address', 'payment_method', 'county', 'state')
+    list_display = ('id', 'first_name', 'phonenumber', 'payment_method', 'county', 'state')
+    ordering=('-id',)
+    list_per_page = 15
+
+admin.site.register(AdoptionApplication, AdoptionApplicationAdmin)
 
 # admin.py
 from django.contrib import admin

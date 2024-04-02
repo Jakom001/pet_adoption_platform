@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "crispy_forms",
     "bootstrap4",
     "crispy_bootstrap4",
+    'paypal.standard.ipn',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -153,3 +154,9 @@ EMAIL_PORT = '587'
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
 EMAIL_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+
+
+PAYPAL_TEST = True  # Set to True for Sandbox testing
+# PAYPAL_WPDT_LOCATION = os.path.join(BASE_DIR, 'static', 'paypal', 'PDT.pem')  # Path to PayPal certificate (download from developer dashboard)
+PAYPAL_RECEIVER_EMAIL = os.environ('PAYPAL_RECEIVER_EMAIL')
+

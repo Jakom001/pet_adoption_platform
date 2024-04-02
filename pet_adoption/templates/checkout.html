@@ -8,67 +8,85 @@
     </div>
          <img  src="{% static 'images/jumbotron.jpg' %}" alt="dog image" class="hero-img">
 </section>
-<div class="container checkout">
-    <h2>Billing Details</h2>
-    <form action="#" method="post">
-        <label for="fname">First Name</label>
-        <input type="text" name="firstname" value="" required>
-        <label for="">Last Name</label>
-        <input type="text" name="lastname" value="" required>
-        <label for="email">Email</label>
-        <input type="email" name="email" value="" required>
-        <label for="phonenumber">Phone Number</label>
-        <input type="number" name="phonenumber" value="" required>
-        <label for="address">Address:</label>
-        <input type="text" id="address" name="address" required>
+<div class="container section">
+    <!-- <div class="section-two checkout">
+        <h2>Billing Details</h2>
+        <form action="#" method="post">
+            {% csrf_token %}
+            <label for="fname">First Name</label>
+            <input type="text" name="firstname" value="" required>
+            <label for="">Last Name</label>
+            <input type="text" name="lastname" value="" required>
+            <label for="email">Email</label>
+            <input type="email" name="email" value="" required>
+            <label for="phonenumber">Phone Number</label>
+            <input type="number" name="phonenumber" value="" required>
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required>
 
-        <label for="address">Address:</label>
-        <input type="text" id="address" name="address" required>
+            <label for="Address">County:</label>
+            <input type="text" id="county" name="county" required>
 
-        <label for="Address">County:</label>
-        <input type="text" id="county" name="county" required>
+            <label for="state">State:</label>
+            <input type="text" id="state" name="state" required>
+            
+            <p><b>Payment Information (Simulated)</b></p>
+            <label for="payment_method">Payment Method:</label>
+            <select name="payment_method" id="payment_method">
+            <option value="credit_card">Paypal</option>
+            <option value="debit_card">M-pesa</option>
+            <option value="debit_card">Cash on delivery</option>
+            </select>
+            <br>
+            <button class="adopt-button" type="submit">Submit Adoption Application</button>
+        </form> -->
 
-        <label for="city">City:</label>
-        <input type="text" id="city" name="city" required>
-        <input type="submit" value="Submit">
-    </form>
-</div>
-<div class="order-summary">
-    <div class="cart">
+        <!-- <div class="shipping-method">
+            <h1>Payment Method</h1>
+            <input type="radio" value="mpesa">
+            <label for="radio">Mpesa</label>
+
+            <input type="radio" value="paypal">
+            <label for="">Paypal</label>
+
+            <input type="radio" value="cash">
+            <label for="">Cash on Delivery</label>
+        </div> 
+
+    </div> -->
+
+    <div class="summary">
+        <h1 class="header1">Order summary</h1>
         <table>
             <tr>
-               
-            <tr>
-            <td>
-                <img src="{{pet.image.url}}" alt="{{pet_name}}">
-                <span>{{pet.name}}</span>
-                <span>{{pet.age}} years old</span>
-            </td>
-            <td>Ksh {{pet.price}}</td>
+                <th>Product Item</th>
+                <th>Price</th>
             </tr>
+            {% for item in cart_items %}
+            <tr>
+                <td>
+                    <img src="{{item.adopt_item.image.url}}" alt="{{item.adopt_item.name}}">
+                    <span>{{ item.adopt_item.name }}</span>
+                    <span>3 years old</span>
+                </td>
+                <td>{{ item.adopt_item.price }}</td>
+            </tr>
+            {% endfor %}
         </table>
-        <div class="total-amount">
-            <div class="total">
-                <h1>Total Amount</h1>
-                <h2>Delivery fees (flat Rate) Ksh 300/=</h2>
-                <h2>Total amount Ksh 800</h2>
+
+            <div class="total-amount">
+                <div class="total">
+                    <h1 class="header1">Total Amount</h1>
+                    <hr>
+                    <h6 class="header6">Delivery fees (flat Rate) Ksh 300/=</h6>
+                    <h3>Total amount Ksh {{total_price}}</h3>
+                </div>
+                {{paypal.render}}
             </div>
-        </div>
-        
+            
     </div>
+
+
+    
 </div>
-
-
-<div class="shipping-method">
-    <h1>Payment Method</h1>
-    <input type="radio" value="mpesa">
-    <label for="radio">Mpesa</label>
-
-    <input type="radio" value="paypal">
-    <label for="">Paypal</label>
-
-    <input type="radio" value="cash">
-    <label for="">Cash on Delivery</label>
-</div>
-
 {% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main %}
+<section class="hero">
+    <div class="hero-content">
+        <h1>Payment failed</h1>
+        <a href="/">Home</a> <span class="hero-ado">/ Failed</span>
+    </div>
+    <img  src="{% static 'images/jumbotron.jpg' %}" alt="dog image" class="hero-img">
+</section>
+
+<h1>Uh oh! There was an error processing your payment.</h1>
+  <p>We apologize for the inconvenience. Your donation was not submitted due to a payment issue.</p>
+  <p>Here are some possible reasons:</p>
+  <ul>
+    <li>Insufficient funds in your PayPal account.</li>
+    <li>Payment processing error on PayPal's side.</li>
+    <li>Technical issue with our website.</li>
+  </ul>
+  <p>You can try the following:</p>
+  <ul>
+    <li>Verify your PayPal account information and try again.</li>
+    <li>Contact PayPal support for assistance.</li>
+    <li>If you believe the issue is with our website, please contact us at 0728169645.</li>
+  </ul>
+  <p><a href="/donate/">Retry Checkout</a></p>
+
+  {% endblock %}

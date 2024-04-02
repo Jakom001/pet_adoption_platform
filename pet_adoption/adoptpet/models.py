@@ -1,5 +1,7 @@
 from django.db import models
 
+from django.contrib.auth.models import User
+
 # Create your models here.
 
 class Adopt(models.Model):
@@ -36,4 +38,36 @@ class Adopt(models.Model):
         db_table = 'pets'
 
 
+class CartItem(models.Model):
+    adopt_item = models.ForeignKey(Adopt, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    quantity = models.PositiveIntegerField(default=1)
+    date_added = models.DateTimeField(auto_now_add=True)
 
+    def __str__(self):
+        return f"{self.quantity}x {self.adopt_item.name}"
+
+    class Meta:
+        verbose_name_plural = 'CartItem'
+        db_table = 'cart items'
+
+from django.db import models
+from django.contrib.auth.models import User
+
+class AdoptionApplication(models.Model):
+  user = models.ForeignKey(User, on_delete=models.CASCADE)
+  pet = models.ForeignKey('Adopt', on_delete=models.CASCADE, null=True, blank=True)  # Optional association with specific pet
+  first_name = models.CharField(max_length=255)
+  last_name = models.CharField(max_length=255)
+  email = models.EmailField()
+  address = models.TextField()
+  state = models.CharField(max_length=100)
+  county = models.CharField(max_length=100)
+  phonenumber = models.CharField(max_length=20, null=True)
+  payment_method = models.CharField(max_length=50)
+  status = models.CharField(max_length=50, choices=[('pending', 'Pending'), ('approved', 'Approved'), ('rejected', 'Rejected')], default='pending')
+  created_at = models.DateTimeField(auto_now_add=True)
+  paypal_transaction_id = models.CharField(max_length=255, blank=True)
+
+  def __str__(self):
+    return f"{self.full_name} - {self.pet}"  # Example string representation

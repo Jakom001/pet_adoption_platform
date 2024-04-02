@@ -27,32 +27,20 @@
 </div>
 <div class="pet-container">
 
-<div class="container">
+    <div class="container">
 
-<h1 class="header1">Help Us Save Lives!</h1>
-<h6 class="header6">Transforming lives with your donation: help rescue dogs and cats today!</h6>
-<br>
-<br>
-<div class="donate-money">
-  <div class="money-card">
-    <h1>Ksh 500</h1>
-    <p>Help provide food and shelter for a pet in need.</p>
-    <button class="adopt-button"> <i class="fa-solid fa-dollar-sign"></i> Donate Now</button>
-  </div>
-
-  <div class="money-card">
-    <h1>Ksh 1000</h1>
-    <p>Contribute to medical care and vaccinations for rescued animals.</p>
-    <button class="adopt-button"> <i class="fa-solid fa-dollar-sign"></i> Donate Now</button>
-  </div>
-
-  <div class="money-card">
-    <h1>Ksh 2000</h1>
-    <p>Sponsor the adoption fee for a pet, making it easier for them to find a loving family.</p>
-    <button class="adopt-button"> <i class="fa-solid fa-dollar-sign"></i> Donate Now</button>
-  </div>
-
-</div>
-</div>
+      <h1 class="header1">Help Us Save Lives!</h1>
+      <h6 class="header6">Transforming lives with your donation: help rescue dogs and cats today!</h6>
+      <br><br>
+      <div class="donate-money">
+          {% for donation, paypal_form in donation_amounts %}
+          <div class="money-card">
+              <h1>Ksh {{ donation.amount }}</h1>
+              <p>{{ donation.description }}</p>
+              {{ paypal_form.render }}
+          </div>
+          {% endfor %}
+      </div>
+    </div>
 </div>
 {% endblock %}

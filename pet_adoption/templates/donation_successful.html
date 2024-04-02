@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main %}
+<section class="hero">
+    <div class="hero-content">
+        <h1>Payment Success</h1>
+        <a href="/">Home</a> <span class="hero-ado">/ Success</span>
+    </div>
+    <img  src="{% static 'images/jumbotron.jpg' %}" alt="dog image" class="hero-img">
+</section>
+
+<h1>Thank You!</h1>
+  <p>Your donation application has been submitted successfully.</p>
+  <p>We've received your application for: {{ user.first_name }} {{ user.last_name }}</p>
+  <p>Email: {{ user.email }}</p>
+  <p>We will be in touch shortly to review your application and discuss the next steps.</p>
+  <p><a href="/">Return to Home Page</a></p>
+
+{% endblock %}
